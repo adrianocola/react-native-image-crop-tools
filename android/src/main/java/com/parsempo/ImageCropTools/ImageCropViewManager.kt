@@ -74,7 +74,7 @@ class ImageCropViewManager: SimpleViewManager<CropImageView>() {
                     format = Bitmap.CompressFormat.PNG
                 }
                 val path = File(root.context.cacheDir, "${UUID.randomUUID()}.$extension").toURI().toString()
-                val quality = args?.getInt(0) ?: 100
+                val quality = args?.getInt(1) ?: 100
 
                 root.saveCroppedImageAsync(Uri.parse(path), format, quality)
             }
